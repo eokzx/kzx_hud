@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<div id="square-hud" class="bottom">
+  <div class="square" data-type="hp">
+    <div class="hp-loss"></div>
+    <i class="fa-solid fa-heart icon"></i>
+  </div>
+  <div class="square"><i class="fa-solid fa-burger icon"></i></div>
+  <div class="square"><i class="fa-solid fa-droplet icon"></i></div>
+</div>
+
+<div id="damage-arrows">
+  <div class="d-arrow" id="arrow-top"></div>
+  <div class="d-arrow" id="arrow-bottom"></div>
+  <div class="d-arrow" id="arrow-left"></div>
+  <div class="d-arrow" id="arrow-right"></div>
+</div>
+
+<div id="hitmarker"><i class="fa-solid fa-xmark"></i></div>
+
+<div id="hud-settings" class="hidden">
+  <div class="settings-window">
+
+    <div class="settings-sidebar">
+      <div class="tab active" data-tab="hud">HUD</div>
+      <div class="tab" data-tab="gradient">Animated Gradient</div>
+      <div class="tab" data-tab="border">Obramówka</div>
+      <div class="tab" data-tab="effects">Effects</div>
+    </div>
+
+    <div class="settings-content">
+
+      <div class="section">
+        <h3>Live HUD Preview</h3>
+        <div class="preview-hud">
+          <div class="square preview">
+            <i class="fa-solid fa-heart icon"></i>
+          </div>
+          <div class="square preview">
+            <i class="fa-solid fa-burger icon"></i>
+          </div>
+          <div class="square preview">
+            <i class="fa-solid fa-droplet icon"></i>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content active" id="hud">
+        <div class="section">
+          <h3>HUD Position</h3>
+          <div class="option-row">
+            <button class="choice active" data-target="position" data-value="bottom">Bottom</button>
+            <button class="choice" data-target="position" data-value="side">Side</button>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>HUD Shape</h3>
+          <div class="option-inline">
+            <label>Border Radius</label>
+            <input type="range" id="borderRadius" min="0" max="20">
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>HP Colors</h3>
+          <div class="option-inline"><label>HP</label><input type="color" id="hpColor"></div>
+          <div class="option-inline"><label>Lost</label><input type="color" id="lossColor"></div>
+        </div>
+      </div>
+
+      <!-- GRADIENT -->
+      <div class="tab-content" id="gradient">
+        <div class="section">
+          <h3>Animated Gradient</h3>
+          <div class="toggle" data-target="gradient">
+            <div class="knob"></div>
+          </div>
+
+          <div class="gradient-options">
+            <div class="option-inline"><label>Color 1</label><input type="color" id="grad1"></div>
+            <div class="option-inline"><label>Color 2</label><input type="color" id="grad2"></div>
+            <div class="option-inline"><label>Color 3</label><input type="color" id="grad3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="border">
+        <div class="section">
+          <h3>Border Enabled</h3>
+          <div class="toggle" data-target="borderEnabled">
+            <div class="knob"></div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Border Thickness</h3>
+          <div class="option-inline">
+            <label>Size</label>
+            <input type="range" id="borderSize" min="1" max="8">
+          </div>
+        </div>
+
+        <div class="section">
+          <h3>Glow</h3>
+          <div class="option-inline"><label>Strength</label><input type="range" id="glowStrength" min="0" max="40"></div>
+          <div class="option-inline"><label>Color</label><input type="color" id="glowColor"></div>
+          <div class="option-inline"><label>Opacity</label><input type="range" id="glowOpacity" min="0" max="1" step="0.05"></div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="effects">
+        <div class="section">
+          <h3>Hitmarker</h3>
+          <div class="option-inline"><label>Color</label><input type="color" id="hitColor"></div>
+          <div class="option-inline"><label>Opacity</label><input type="range" id="hitOpacity" min="0" max="1" step="0.05"></div>
+        </div>
+
+        <div class="section">
+          <h3>Damage Arrows</h3>
+          <div class="option-inline"><label>Color</label><input type="color" id="damageColor"></div>
+          <div class="option-inline"><label>Opacity</label><input type="range" id="damageOpacity" min="0" max="1" step="0.05"></div>
+        </div>
+      </div>
+
+      <button id="save" class="save-btn">SAVE SETTINGS</button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
